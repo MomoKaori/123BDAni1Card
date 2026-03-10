@@ -1,0 +1,597 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand:wght@400;500;600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(90deg, #764ba2 0%, #9b59b6 15%, #f093fb 30%, #f5576c 45%, #ff9a76 60%, #1e3c72 75%, #667eea 90%, #3498db 100%);
+  background-size: 400% 400%;
+  animation: birthdayGradient 25s ease infinite;
+  font-family: 'Quicksand', sans-serif;
+  overflow: hidden;
+  position: relative;
+}
+
+@keyframes birthdayGradient {
+  0% { background-position: 0% 0%; }
+  50% { background-position: 100% 0%; }
+  100% { background-position: 0% 0%; }
+}
+
+/* confetti background */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  background-image: 
+    radial-gradient(circle at 15% 15%, rgba(255, 255, 255, 0.1) 0%, transparent 3%),
+    radial-gradient(circle at 85% 25%, rgba(255, 195, 113, 0.1) 0%, transparent 3%),
+    radial-gradient(circle at 25% 85%, rgba(245, 87, 108, 0.1) 0%, transparent 3%),
+    radial-gradient(circle at 75% 75%, rgba(240, 147, 251, 0.1) 0%, transparent 3%),
+    radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.05) 0%, transparent 5%);
+  animation: confettiFall 15s linear infinite;
+}
+
+@keyframes confettiFall {
+  0% { transform: translateY(-100vh) rotate(0deg); }
+  100% { transform: translateY(100vh) rotate(360deg); }
+}
+
+.wish-instruction {
+  font-size: 1.2rem;
+  color: white;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  margin-bottom: 15px;
+  opacity: 1; /* Hiển thị từ đầu */
+}
+
+.wish-button-container {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.loading-container {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.loading-text {
+  font-size: 1.2rem;
+  color: white;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  margin-bottom: 15px;
+}
+
+.loading-bar {
+  width: 200px;
+  height: 8px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 4px;
+  margin: 0 auto;
+  overflow: hidden;
+  position: relative;
+}
+
+.loading-progress {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(45deg, #f093fb, #f5576c);
+  border-radius: 4px;
+  animation: loadingProgress 3s linear forwards;
+  box-shadow: 0 0 10px rgba(240, 147, 251, 0.5);
+}
+
+@keyframes loadingProgress {
+  0% { width: 0%; }
+  100% { width: 100%; }
+}
+
+.birthday-container {
+  text-align: center;
+  z-index: 10;
+  max-width: 800px;
+  padding: 40px;
+}
+
+.birthday-title {
+  font-family: 'Pacifico', cursive;
+  font-size: 4rem;
+  color: white;
+  text-shadow: 
+    0 0 20px rgba(255, 255, 255, 0.5),
+    0 0 40px rgba(255, 195, 113, 0.3),
+    0 0 60px rgba(245, 87, 108, 0.2);
+  margin-bottom: -30px; /* Giảm từ -10px thành -30px để bánh cao lên */
+  animation: bounce 2s ease-in-out infinite alternate;
+}
+
+@keyframes bounce {
+  0% { transform: translateY(0px) scale(1); }
+  100% { transform: translateY(-10px) scale(1.05); }
+}
+
+.birthday-message {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  padding: 10px 60px; /* Giảm padding trên xuống từ 15px thành 10px */
+  margin: 15px auto; /* Giảm margin từ 30px thành 15px */
+  max-width: 1000px;
+  width: 95%;
+  text-align: center;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.message-text {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin: 10px 0;
+  color: white;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  font-weight: 500;
+  opacity: 0;
+  transform: translateY(30px); /* Thêm transform ban đầu */
+  transition: all 1s ease; /* Thay animation thành transition */
+  cursor: pointer;
+}
+
+.message-text.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.cake-container {
+  margin: 70px 0; /* Tăng từ 40px thành 60px để di chuyển xuống */
+  position: relative;
+}
+
+.cake {
+  width: 200px;
+  height: 75px;
+  background: linear-gradient(to bottom, 
+    #8b4513 0%, 
+    #a0522d 25%, 
+    #cd853f 50%, 
+    #daa520 75%, 
+    #b8860b 100%);
+  border-radius: 10px;
+  position: relative;
+  margin: 0 auto;
+  box-shadow: 
+    0 10px 30px rgba(0, 0, 0, 0.3),
+    inset 0 -5px 10px rgba(0, 0, 0, 0.2),
+    inset 0 5px 10px rgba(255, 255, 255, 0.1);
+  animation: cakeFloat 3s ease-in-out infinite;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: visible; /* Thay đổi từ hidden thành visible */
+}
+
+/* Trang trí bánh */
+.cake::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    radial-gradient(circle at 20% 80%, rgba(255, 255, 255, 0.3) 0%, transparent 20%),
+    radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.3) 0%, transparent 20%),
+    radial-gradient(circle at 50% 50%, rgba(255, 215, 0, 0.2) 0%, transparent 30%);
+  border-radius: 10px;
+}
+
+/* Kem trên bánh */
+.cake::after {
+  content: '';
+  position: absolute;
+  top: -5px;
+  left: 0;
+  width: 100%;
+  height: 15px;
+  background: linear-gradient(to right, 
+    #fff 0%, 
+    #ff69b4 20%, 
+    #fff 40%, 
+    #87ceeb 60%, 
+    #fff 80%, 
+    #98fb98 100%);
+  border-radius: 50% 50% 0 0;
+  box-shadow: 
+    0 3px 10px rgba(0, 0, 0, 0.1),
+    inset 0 2px 5px rgba(255, 255, 255, 0.8);
+  z-index: 2; /* Kem ở dưới nến */
+}
+
+/* Đường viền bánh */
+.cake-border {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 8px;
+  background: linear-gradient(to right, 
+    #ff69b4, 
+    #ff1493, 
+    #ff69b4, 
+    #ff1493, 
+    #ff69b4);
+  border-radius: 0 0 10px 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Sprinkles trang trí */
+.cake-sprinkles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1; /* Sprinkles ở dưới nến */
+}
+
+.sprinkle {
+  position: absolute;
+  width: 3px;
+  height: 8px;
+  border-radius: 2px;
+  animation: sprinkleShine 2s ease-in-out infinite;
+}
+
+.sprinkle:nth-child(1) {
+  top: 20%;
+  left: 15%;
+  background: #ff69b4;
+  transform: rotate(25deg);
+  animation-delay: 0s;
+}
+
+.sprinkle:nth-child(2) {
+  top: 30%;
+  left: 25%;
+  background: #87ceeb;
+  transform: rotate(-15deg);
+  animation-delay: 0.3s;
+}
+
+.sprinkle:nth-child(3) {
+  top: 15%;
+  left: 40%;
+  background: #98fb98;
+  transform: rotate(45deg);
+  animation-delay: 0.6s;
+}
+
+.sprinkle:nth-child(4) {
+  top: 25%;
+  left: 55%;
+  background: #ffd700;
+  transform: rotate(-30deg);
+  animation-delay: 0.9s;
+}
+
+.sprinkle:nth-child(5) {
+  top: 35%;
+  left: 70%;
+  background: #ff6347;
+  transform: rotate(15deg);
+  animation-delay: 1.2s;
+}
+
+.sprinkle:nth-child(6) {
+  top: 20%;
+  left: 85%;
+  background: #9370db;
+  transform: rotate(-45deg);
+  animation-delay: 1.5s;
+}
+
+@keyframes sprinkleShine {
+  0%, 100% {
+    opacity: 0.7;
+    transform: scale(1) rotate(var(--rotation));
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.2) rotate(var(--rotation));
+  }
+}
+
+/* Nến sinh nhật */
+.candles {
+  position: absolute;
+  top: -35px; /* Điều chỉnh vị trí */
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 30px;
+  z-index: 100; /* Z-index rất cao để đảm bảo hiển thị */
+}
+
+.candle {
+  width: 8px;
+  height: 25px;
+  background: linear-gradient(to bottom, #ff69b4, #ff1493);
+  border-radius: 4px;
+  position: relative;
+  animation: candleFlicker 1s ease-in-out infinite alternate;
+  z-index: 101;
+}
+
+.candle::before {
+  content: '';
+  position: absolute;
+  top: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 6px;
+  height: 8px;
+  background: radial-gradient(circle, #ffa500, #ff6347);
+  border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+  animation: flameFlicker 0.5s ease-in-out infinite alternate;
+  transition: opacity 0.3s ease;
+  z-index: 102;
+}
+
+.candle.extinguished::before {
+  opacity: 0;
+  animation: none;
+}
+
+@keyframes candleFlicker {
+  0% { transform: scale(1); }
+  100% { transform: scale(1.05); }
+}
+
+@keyframes flameFlicker {
+  0% { 
+    transform: translateX(-50%) scale(1);
+    filter: brightness(1);
+  }
+  100% { 
+    transform: translateX(-50%) scale(1.2);
+    filter: brightness(1.3);
+  }
+}
+
+/* Confetti container */
+.confetti-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1000;
+  overflow: hidden;
+}
+
+.confetti {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background: #ff69b4;
+  animation: confettiFall 3s linear infinite;
+}
+
+.confetti:nth-child(2n) {
+  background: #87ceeb;
+  animation-delay: 0.2s;
+  animation-duration: 2.5s;
+}
+
+.confetti:nth-child(3n) {
+  background: #98fb98;
+  animation-delay: 0.4s;
+  animation-duration: 3.5s;
+}
+
+.confetti:nth-child(4n) {
+  background: #ffd700;
+  animation-delay: 0.6s;
+  animation-duration: 2.8s;
+}
+
+.confetti:nth-child(5n) {
+  background: #ff6347;
+  animation-delay: 0.8s;
+  animation-duration: 3.2s;
+}
+
+@keyframes confettiFall {
+  0% {
+    transform: translateY(-100vh) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100vh) rotate(360deg);
+    opacity: 0.8;
+  }
+}
+
+/* Wish button */
+.wish-button-container {
+  margin: 30px 0;
+  text-align: center;
+}
+
+.wish-btn {
+  padding: 15px 35px;
+  border: none;
+  border-radius: 30px;
+  background: linear-gradient(45deg, #f093fb, #ff9a76);
+  color: white;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(240, 147, 251, 0.3);
+  animation: wishButtonPulse 2s ease-in-out infinite;
+}
+
+.wish-btn:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 8px 25px rgba(240, 147, 251, 0.5);
+}
+
+.wish-btn:active {
+  transform: translateY(0) scale(0.98);
+}
+
+@keyframes wishButtonPulse {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 4px 15px rgba(240, 147, 251, 0.3);
+  }
+  50% {
+    transform: scale(1.05);
+    box-shadow: 0 8px 25px rgba(240, 147, 251, 0.5);
+  }
+}
+
+@keyframes cakeFloat {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+.birthday-buttons {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: -45px; /* Giảm từ -60px thành -45px để không dính bánh */
+}
+
+.birthday-btn {
+  padding: 15px 30px;
+  border: none;
+  border-radius: 30px;
+  background: linear-gradient(45deg, #667eea, #f5576c);
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+  text-decoration: none;
+  display: inline-block;
+}
+
+.birthday-btn:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 8px 25px rgba(102, 126, 234, 0.5);
+}
+
+.balloons {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.balloon {
+  position: absolute;
+  width: 60px;
+  height: 70px;
+  border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+  animation: balloonFloat 6s ease-in-out infinite;
+}
+
+.balloon1 {
+  background: linear-gradient(45deg, #667eea, #764ba2);
+  left: 10%;
+  top: 20%;
+  animation-delay: 0s;
+}
+
+.balloon2 {
+  background: linear-gradient(45deg, #f093fb, #f5576c);
+  left: 80%;
+  top: 15%;
+  animation-delay: 1s;
+}
+
+.balloon3 {
+  background: linear-gradient(45deg, #ff9a76, #ff7979);
+  left: 15%;
+  top: 70%;
+  animation-delay: 2s;
+}
+
+.balloon4 {
+  background: linear-gradient(45deg, #ffc371, #ffa500);
+  left: 85%;
+  top: 75%;
+  animation-delay: 3s;
+}
+
+@keyframes balloonFloat {
+  0%, 100% { 
+    transform: translateY(0px) rotate(-5deg); 
+  }
+  25% { 
+    transform: translateY(-20px) rotate(5deg); 
+  }
+  50% { 
+    transform: translateY(-10px) rotate(-3deg); 
+  }
+  75% { 
+    transform: translateY(-30px) rotate(3deg); 
+  }
+}
+
+.balloon::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 2px;
+  height: 50px;
+  background: rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 768px) {
+  .birthday-title {
+    font-size: 3rem;
+  }
+  
+  .message-text {
+    font-size: 1.2rem;
+  }
+  
+  .birthday-container {
+    padding: 20px;
+  }
+  
+  .birthday-message {
+    padding: 30px;
+  }
+}

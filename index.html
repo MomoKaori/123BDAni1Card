@@ -1,0 +1,74 @@
+<!doctype html>
+
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+
+    <title>Một món quà nhỏ</title>
+
+    <link rel="stylesheet" href="css/main.css" />
+  </head>
+
+  <body>
+    <!-- NHẠC NỀN -->
+    <audio loop id="bgMusic">
+      <source
+        src="assets/music/LÀ ANH - Mộng Nhiên ( 是你 - 梦然 )  Piano Cover - Người Nghiện Chơi Đàn.mp3"
+      />
+    </audio>
+
+    <!-- Nút Bắt Đầu -->
+    <div id="startScreen" class="start-screen">
+      <button id="beginBtn" onclick="beginExperience()">
+        Nhấn Để Bắt Đầu 🎀💌💓
+      </button>
+      <p class="start-warning">
+        Bấm chậm hoi hog chuyển nhạc bé chưa bic làm nên bị khựng hề lémm
+        (⸝⸝⸝╸▵╺⸝⸝⸝)
+      </p>
+    </div>
+
+    <!-- INTRO -->
+    <div id="intro" style="display: none">
+      <p class="text" id="line1"></p>
+
+      <p class="text" id="line2"></p>
+
+      <p class="text" id="line3"></p>
+
+      <button id="startBtn" onclick="showPassword()" style="display: none">
+        Mở thử nhé ˚.🎁⋆
+      </button>
+    </div>
+
+    <!-- PASSWORD -->
+    <div id="passwordScreen" style="display: none">
+      <p id="q1"></p>
+
+      <p id="q2"></p>
+
+      <p class="question" id="q3"></p>
+
+      <div id="inputArea" style="display: none">
+        <input
+          type="date"
+          id="birthdayInput"
+          min="1900-01-01"
+          max="2010-12-31"
+        />
+
+        <button id="openBtn" onclick="checkPassword()">Kiểm tra</button>
+
+        <p id="message"></p>
+
+        <!-- nút sang trang thư -->
+
+        <button id="nextBtn" onclick="openLetter()" style="display: none">
+          ➡
+        </button>
+      </div>
+    </div>
+
+    <script src="js/main.js"></script>
+  </body>
+</html>

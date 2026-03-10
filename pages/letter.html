@@ -1,0 +1,217 @@
+<!doctype html>
+
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+    <title>Lá thư nhỏ</title>
+
+    <link rel="stylesheet" href="../css/letter.css" />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600;700&family=Quicksand:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <!-- NHẠC NỀN -->
+    <audio loop id="bgMusic">
+      <source src="../assets/music/9420 麦小兜 歌詞   就是愛你   Chính Là Yêu Anh Vietsub .mp3" />
+    </audio>
+
+    <!-- Phong bì -->
+
+    <div class="envelope-container" id="envelopeContainer">
+      <div class="envelope" id="envelope">
+        <div class="envelope-body">
+          <div class="envelope-text">
+            <p class="main-text">Có thư mới!</p>
+
+            <small class="hint-text">Click để mở</small>
+          </div>
+        </div>
+
+        <div class="envelope-flap" id="envelopeFlap"></div>
+
+        <!-- Hiệu ứng xung quanh -->
+
+        <div class="envelope-effects">
+          <div class="sparkle sparkle1">✨</div>
+
+          <div class="sparkle sparkle2">⭐</div>
+
+          <div class="sparkle sparkle3">✨</div>
+
+          <div class="sparkle sparkle4">⭐</div>
+
+          <div class="sparkle sparkle5">✨</div>
+
+          <div class="sparkle sparkle6">⭐</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Nội dung thư -->
+
+    <div class="page" id="letterPage" style="display: none">
+      <!-- hoa trang trí -->
+
+      <div class="flower flower1"></div>
+
+      <div class="flower flower2"></div>
+
+      <div class="flower flower3"></div>
+
+      <div class="flower flower4"></div>
+
+      <!-- thêm hoa nhỏ xung quanh -->
+
+      <div class="small-flowers">
+        <div class="small-flower sf1">🌸</div>
+
+        <div class="small-flower sf2">🌺</div>
+
+        <div class="small-flower sf3">🌷</div>
+
+        <div class="small-flower sf4">🌹</div>
+
+        <div class="small-flower sf5">🌸</div>
+
+        <div class="small-flower sf6">🌺</div>
+      </div>
+
+      <!-- Nút điều hướng trái -->
+
+      <button
+        class="page-nav-btn prev-btn"
+        id="prevBtn"
+        onclick="changePage(-1)"
+      >
+        ←
+      </button>
+
+      <!-- Giấy thư -->
+
+      <div class="paper">
+        <div class="letter-header">
+          <span class="letter-date">12/03/2026</span>
+
+          <span class="letter-salutation">Gửi abee,</span>
+        </div>
+
+        <div class="letter-content">
+          <!-- Trang 1 -->
+
+          <div class="letter-page" id="page1">
+            <div class="letter-lines">
+              <p class="letter-line" id="l1"></p>
+
+              <p class="letter-line" id="l2"></p>
+
+              <p class="letter-line" id="l3"></p>
+
+              <p class="letter-line" id="l4"></p>
+
+              <p class="letter-line" id="l5"></p>
+
+              <p class="letter-line" id="l6"></p>
+
+              <p class="letter-line" id="l7"></p>
+
+              <p class="letter-line" id="l8"></p>
+            </div>
+          </div>
+
+          <!-- Trang 2 -->
+
+          <div class="letter-page" id="page2" style="display: none">
+            <div class="letter-lines">
+              <p class="letter-line" id="l9"></p>
+
+              <p class="letter-line" id="l10"></p>
+
+              <p class="letter-line" id="l11"></p>
+
+              <p class="letter-line" id="l12"></p>
+
+              <p class="letter-line" id="l13"></p>
+
+              <p class="letter-line" id="l14"></p>
+
+              <p class="letter-line" id="l15"></p>
+
+              <p class="letter-line" id="l16"></p>
+            </div>
+          </div>
+
+          <!-- Trang 3 -->
+
+          <div class="letter-page" id="page3" style="display: none">
+            <div class="letter-lines">
+              <p class="letter-line" id="l17"></p>
+
+              <p class="letter-line" id="l18"></p>
+
+              <p class="letter-line" id="l19"></p>
+
+              <p class="letter-line" id="l20"></p>
+
+              <p class="letter-line" id="l21"></p>
+
+              <p class="letter-line" id="l22"></p>
+
+              <p class="letter-line" id="l23"></p>
+
+              <p class="letter-line" id="l24"></p>
+
+              <p class="letter-line" id="l25"></p>
+
+              <p class="letter-line" id="l26"></p>
+
+              <p class="letter-line" id="l27"></p>
+
+              <p class="letter-line" id="l28"></p>
+
+              <p class="letter-line" id="l29"></p>
+            </div>
+          </div>
+        </div>
+
+        <div class="letter-footer">
+          <span class="letter-signature">Từ embe cụa anh</span>
+
+          <span class="letter-heart">💕</span>
+        </div>
+
+        <!-- Số trang -->
+
+        <div class="page-indicator">
+          <span id="currentPage">1</span> / <span id="totalPages">3</span>
+        </div>
+      </div>
+
+      <!-- Nút điều hướng phải -->
+
+      <button
+        class="page-nav-btn next-btn"
+        id="nextBtn"
+        onclick="changePage(1)"
+      >
+        →
+      </button>
+
+      <!-- Nút điều hướng -->
+
+      <div class="letter-navigation">
+        <a href="../index.html" class="nav-btn">← Quay lại</a>
+
+        <a href="birthday.html" class="nav-btn">Tiếp tục →</a>
+      </div>
+    </div>
+
+    <script src="../js/letter.js"></script>
+  </body>
+</html>

@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Quà Tặng Bất Ngờ 🎁</title>
+    <link rel="stylesheet" href="../css/gifts.css" />
+  </head>
+
+  <body>
+    <!-- Bong bóng nước rơi xuống -->
+    <div class="bubbles-container" id="bubblesContainer"></div>
+
+    <div class="gifts-container">
+      <h1 class="gifts-title">🎁 BirthDay Gift 🎁</h1>
+      <p class="gifts-subtitle">Bấm vào bong bóng để nhận quà bất ngờ từ em! 💝</p>
+
+      <!-- Khu vực hiển thị quà -->
+      <div class="gift-display" id="giftDisplay" style="display: none;">
+        <div class="gift-content">
+          <div class="gift-icon" id="giftIcon">💝</div>
+          <img class="gift-image" id="giftImage" style="display: none;" alt="Gift Image">
+          <h2 class="gift-title" id="giftTitle">Lời Yêu Thương</h2>
+          <p class="gift-message" id="giftMessage">Cảm ơn anh đã đến bên em...</p>
+          <button class="close-btn" onclick="closeGift()">✨ Đóng</button>
+        </div>
+      </div>
+
+      <!-- Nút điều hướng -->
+      <div class="navigation-buttons">
+        <a href="birthday.html" class="nav-btn">← Quay lại</a>
+        <a href="whiteday.html" class="nav-btn">Tiếp tục →</a>
+      </div>
+    </div>
+
+    <script src="../js/gifts.js"></script>
+  </body>
+</html>
