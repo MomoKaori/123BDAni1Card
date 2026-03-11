@@ -131,10 +131,22 @@ body::before {
 .unlock-date {
   font-family: 'Playfair Display', serif;
   font-size: 1.8rem;
-  color: #f093fb;
+  color: #FFD700;
   font-weight: 700;
   margin-bottom: 20px;
-  text-shadow: 0 0 20px rgba(240, 147, 251, 0.5);
+  text-shadow: 0 0 20px rgba(255, 215, 0, 0.8), 0 0 40px rgba(255, 215, 0, 0.5);
+  animation: datePulse 2s ease-in-out infinite;
+}
+
+@keyframes datePulse {
+  0%, 100% { 
+    color: #FFD700;
+    text-shadow: 0 0 20px rgba(255, 215, 0, 0.8), 0 0 40px rgba(255, 215, 0, 0.5);
+  }
+  50% { 
+    color: #FFA500;
+    text-shadow: 0 0 30px rgba(255, 165, 0, 1), 0 0 50px rgba(255, 215, 0, 0.7);
+  }
 }
 
 .countdown {
