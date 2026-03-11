@@ -229,6 +229,19 @@ function beginExperience() {
   typeLine();
 }
 
+// Kiểm tra nếu quay lại từ trang khác
+window.addEventListener('DOMContentLoaded', function() {
+  if (sessionStorage.getItem('playIndexMusicOnLoad') === 'true') {
+    sessionStorage.removeItem('playIndexMusicOnLoad');
+    // Ẩn start screen, hiện intro
+    document.getElementById("startScreen").style.display = "none";
+    document.getElementById("intro").style.display = "block";
+    document.getElementById("passwordScreen").style.display = "none";
+    // Chạy nhạc
+    startMusic();
+  }
+});
+
 // ===== khởi tạo nhạc =====
 
 let musicStarted = false;

@@ -5,6 +5,7 @@
   <head>
 
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <title>Chúc Mừng Sinh Nhật 🎂</title>
 
@@ -15,6 +16,10 @@
 
 
   <body>
+
+    <audio loop id="bgMusic">
+      <source src="../assets/music/THIS WINTER, TO YOU (HAPPY BIRTHDAY)  YELLOW PAPER (HANROM) - everyday~ athalia!.mp3" />
+    </audio>
 
     <div class="balloons">
 
@@ -103,9 +108,9 @@
 
       <div class="birthday-buttons" id="birthdayButtons" style="display: none;">
 
-        <a href="letter.html" class="birthday-btn">← Quay lại</a>
+        <a href="letter.html" class="birthday-btn" onclick="goBackToLetter()">← Quay lại</a>
 
-        <a href="gifts.html" class="birthday-btn">🎁Quà sinh nhật →</a>
+        <a href="gifts.html" class="birthday-btn" onclick="goToGifts()">🎁Quà sinh nhật →</a>
 
       </div>
 

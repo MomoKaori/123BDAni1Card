@@ -404,7 +404,13 @@ function startTyping() {
 
 }
 
+function goToBirthday() {
+  sessionStorage.setItem('playBirthdayMusicOnLoad', 'true');
+}
 
+function goBackToIndex() {
+  sessionStorage.setItem('playIndexMusicOnLoad', 'true');
+}
 
 
 
@@ -1010,19 +1016,14 @@ window.onload = function() {
 
     }
 
-    
-
-    // Chạy nhạc khi user click lần đầu tiên sau khi mở thư
-
-    if (!letterMusicStarted && isLetterOpen && letterLineIndex === 0) {
-
-      startLetterMusic();
-
-    }
-
   });
 
   
+
+  if (sessionStorage.getItem('playLetterMusicOnLoad') === 'true') {
+    sessionStorage.removeItem('playLetterMusicOnLoad');
+    startLetterMusic();
+  }
 
   updateNavigationButtons();
 

@@ -12,7 +12,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: linear-gradient(135deg, #2c3e50 0%, #34495e 25%, #e74c3c 50%, #c0392b 75%, #e67e22 100%);
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 25%, #f093fb 50%, #4facfe 75%, #00f2fe 100%);
   background-size: 400% 400%;
   animation: anniversaryGradient 25s ease infinite;
   font-family: 'Quicksand', sans-serif;
@@ -51,18 +51,19 @@ body::before {
   text-align: center;
   z-index: 10;
   max-width: 900px;
-  padding: 40px;
+  padding: 20px;
+  width: 100%;
 }
 
 .anniversary-title {
   font-family: 'Playfair Display', serif;
-  font-size: 3.5rem;
+  font-size: 2.5rem;
   color: white;
   text-shadow: 
     0 0 20px rgba(255, 255, 255, 0.5),
     0 0 40px rgba(231, 76, 60, 0.3),
     0 0 60px rgba(230, 126, 34, 0.2);
-  margin-bottom: 20px;
+  margin-bottom: 15px;
   animation: titleGlow 3s ease-in-out infinite alternate;
 }
 
@@ -84,9 +85,9 @@ body::before {
 }
 
 .subtitle {
-  font-size: 1.5rem;
+  font-size: 1.1rem;
   color: #ecf0f1;
-  margin-bottom: 40px;
+  margin-bottom: 20px;
   font-weight: 300;
   opacity: 0;
   animation: fadeIn 1s ease 0.5s forwards;
@@ -97,59 +98,81 @@ body::before {
   to { opacity: 1; }
 }
 
-.timeline {
+.lock-icon {
+  font-size: 3rem;
+  margin-bottom: 15px;
+  animation: lockPulse 2s ease-in-out infinite;
+}
+
+@keyframes lockPulse {
+  0%, 100% { transform: scale(1); opacity: 0.8; }
+  50% { transform: scale(1.1); opacity: 1; }
+}
+
+.countdown-container {
   background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(10px);
-  border-radius: 25px;
-  padding: 40px;
+  border-radius: 20px;
+  padding: 20px;
   box-shadow: 
     0 8px 32px rgba(0, 0, 0, 0.2),
     inset 0 0 20px rgba(255, 255, 255, 0.1);
   border: 1px solid rgba(255, 255, 255, 0.2);
-  margin-bottom: 30px;
+  margin-bottom: 20px;
 }
 
-.timeline-item {
-  margin: 30px 0;
-  opacity: 0;
-  animation: slideInLeft 0.8s ease forwards;
-}
-
-.timeline-item:nth-child(1) { animation-delay: 0.8s; }
-.timeline-item:nth-child(2) { animation-delay: 1.2s; }
-.timeline-item:nth-child(3) { animation-delay: 1.6s; }
-.timeline-item:nth-child(4) { animation-delay: 2s; }
-
-@keyframes slideInLeft {
-  from {
-    opacity: 0;
-    transform: translateX(-50px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-.timeline-date {
-  font-family: 'Playfair Display', serif;
-  font-size: 1.3rem;
-  color: #e74c3c;
-  font-weight: 700;
-  margin-bottom: 10px;
-}
-
-.timeline-text {
+.countdown-title {
   font-size: 1.1rem;
-  line-height: 1.6;
   color: #ecf0f1;
-  font-weight: 400;
+  margin-bottom: 8px;
+  font-weight: 300;
+}
+
+.unlock-date {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.8rem;
+  color: #f093fb;
+  font-weight: 700;
+  margin-bottom: 20px;
+  text-shadow: 0 0 20px rgba(240, 147, 251, 0.5);
+}
+
+.countdown {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.countdown-item {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(5px);
+  border-radius: 12px;
+  padding: 15px 20px;
+  min-width: 70px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.countdown-value {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  color: white;
+  font-weight: 700;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+.countdown-label {
+  font-size: 0.75rem;
+  color: #ecf0f1;
+  margin-top: 5px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
 .heart-container {
-  margin: 40px 0;
+  margin: 20px 0;
   position: relative;
-  height: 100px;
+  height: 60px;
 }
 
 .heart {
@@ -157,7 +180,7 @@ body::before {
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  font-size: 4rem;
+  font-size: 2.5rem;
   animation: heartbeat 1.5s ease-in-out infinite;
   color: #e74c3c;
   text-shadow: 0 0 20px rgba(231, 76, 60, 0.5);
@@ -280,26 +303,52 @@ body::before {
 
 @media (max-width: 768px) {
   .anniversary-title {
-    font-size: 2.5rem;
+    font-size: 2rem;
   }
   
   .subtitle {
-    font-size: 1.2rem;
+    font-size: 0.95rem;
   }
   
   .anniversary-container {
-    padding: 20px;
+    padding: 15px;
   }
   
-  .timeline {
-    padding: 30px;
+  .lock-icon {
+    font-size: 2.5rem;
   }
   
-  .timeline-date {
-    font-size: 1.1rem;
+  .unlock-date {
+    font-size: 1.5rem;
   }
   
-  .timeline-text {
-    font-size: 1rem;
+  .countdown-container {
+    padding: 15px;
+  }
+  
+  .countdown {
+    gap: 10px;
+  }
+  
+  .countdown-item {
+    padding: 10px 15px;
+    min-width: 60px;
+  }
+  
+  .countdown-value {
+    font-size: 1.5rem;
+  }
+  
+  .countdown-label {
+    font-size: 0.65rem;
+  }
+  
+  .heart {
+    font-size: 2rem;
+  }
+  
+  .anniversary-btn {
+    padding: 12px 25px;
+    font-size: 14px;
   }
 }

@@ -181,8 +181,43 @@ function startBubbles() {
   setInterval(createBubble, 2000);
 }
 
+// Khởi tạo nhạc tiếp tục từ birthday
+let giftsMusicStarted = false;
+
+function continueMusic() {
+  if (giftsMusicStarted) return;
+  
+  const bgMusic = document.getElementById('bgMusic');
+  if (bgMusic) {
+    bgMusic.volume = 0.3;
+    
+    // Kiểm tra xem có tiếp tục từ birthday không
+    if (sessionStorage.getItem('continueMusic') === 'true') {
+      const savedTime = parseFloat(sessionStorage.getItem('musicCurrentTime') || 0);
+      bgMusic.currentTime = savedTime;
+      sessionStorage.removeItem('continueMusic');
+      sessionStorage.removeItem('musicCurrentTime');
+      console.log('Continuing music from:', savedTime);
+    } else {
+      bgMusic.currentTime = 0;
+    }
+    
+    bgMusic.play().then(() => {
+      giftsMusicStarted = true;
+      console.log('Gifts music started successfully');
+    }).catch(e => console.log('Gifts autoplay blocked:', e));
+  }
+}
+
+function goBackToBirthday() {
+  sessionStorage.setItem('playBirthdayMusicOnLoad', 'true');
+}
+
 // Bắt đầu khi trang load
-window.addEventListener('load', startBubbles);
+window.addEventListener('load', function() {
+  continueMusic();
+  startBubbles();
+});
 
 // Click vào background để tạo bong bóng mới
 document.addEventListener('click', function(e) {

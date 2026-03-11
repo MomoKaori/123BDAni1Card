@@ -261,3 +261,38 @@ if (!document.querySelector('#fadeInUpAnimation')) {
   `;
   document.head.appendChild(style);
 }
+
+let birthdayMusicStarted = false;
+
+function startBirthdayMusic() {
+  if (birthdayMusicStarted) return;
+
+  const bgMusic = document.getElementById('bgMusic');
+  if (bgMusic) {
+    bgMusic.volume = 0.3;
+    bgMusic.currentTime = 0;
+    bgMusic.play().then(() => {
+      birthdayMusicStarted = true;
+      console.log('Birthday music started successfully');
+    }).catch(e => console.log('Birthday autoplay blocked:', e));
+  }
+}
+
+function goToGifts() {
+  const bgMusic = document.getElementById('bgMusic');
+  if (bgMusic && !bgMusic.paused) {
+    sessionStorage.setItem('musicCurrentTime', bgMusic.currentTime);
+    sessionStorage.setItem('continueMusic', 'true');
+  }
+}
+
+function goBackToLetter() {
+  sessionStorage.setItem('playLetterMusicOnLoad', 'true');
+}
+
+window.onload = function() {
+  if (sessionStorage.getItem('playBirthdayMusicOnLoad') === 'true') {
+    sessionStorage.removeItem('playBirthdayMusicOnLoad');
+    startBirthdayMusic();
+  }
+};

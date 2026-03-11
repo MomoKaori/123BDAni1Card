@@ -2,11 +2,16 @@
 <html lang="vi">
   <head>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Quà Tặng Bất Ngờ 🎁</title>
     <link rel="stylesheet" href="../css/gifts.css" />
   </head>
 
   <body>
+    <audio loop id="bgMusic">
+      <source src="../assets/music/THIS WINTER, TO YOU (HAPPY BIRTHDAY)  YELLOW PAPER (HANROM) - everyday~ athalia!.mp3" />
+    </audio>
+
     <!-- Bong bóng nước rơi xuống -->
     <div class="bubbles-container" id="bubblesContainer"></div>
 
@@ -27,8 +32,8 @@
 
       <!-- Nút điều hướng -->
       <div class="navigation-buttons">
-        <a href="birthday.html" class="nav-btn">← Quay lại</a>
-        <a href="whiteday.html" class="nav-btn">Tiếp tục →</a>
+        <a href="birthday.html" class="nav-btn" onclick="goBackToBirthday()">← Quay lại</a>
+        <a href="anniversary.html" class="nav-btn">Tiếp tục →</a>
       </div>
     </div>
 
