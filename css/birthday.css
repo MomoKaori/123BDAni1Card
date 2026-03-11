@@ -17,9 +17,9 @@ body {
   animation: birthdayGradient 25s ease infinite;
   font-family: 'Quicksand', sans-serif;
   overflow-x: hidden;
-  overflow-y: auto;
+  overflow-y: hidden;
   position: relative;
-  padding: 20px 10px;
+  padding: 8px 10px;
 }
 
 @keyframes birthdayGradient {
@@ -52,16 +52,16 @@ body::before {
 }
 
 .wish-instruction {
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   color: white;
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-  margin-bottom: 15px;
-  opacity: 1; /* Hiển thị từ đầu */
+  margin-bottom: 12px;
+  opacity: 1;
 }
 
 .wish-button-container {
   text-align: center;
-  margin: 20px 0;
+  margin: 15px 0;
 }
 
 .loading-container {
@@ -103,19 +103,19 @@ body::before {
 .birthday-container {
   text-align: center;
   z-index: 10;
-  max-width: 800px;
-  padding: 40px;
+  max-width: 700px;
+  padding: 8px 20px;
 }
 
 .birthday-title {
   font-family: 'Pacifico', cursive;
-  font-size: 4rem;
+  font-size: 2.8rem;
   color: white;
   text-shadow: 
     0 0 20px rgba(255, 255, 255, 0.5),
     0 0 40px rgba(255, 195, 113, 0.3),
     0 0 60px rgba(245, 87, 108, 0.2);
-  margin-bottom: -30px; /* Giảm từ -10px thành -30px để bánh cao lên */
+  margin-bottom: 10px;
   animation: bounce 2s ease-in-out infinite alternate;
 }
 
@@ -128,26 +128,23 @@ body::before {
   background: rgba(255, 255, 255, 0.15);
   backdrop-filter: blur(10px);
   border-radius: 20px;
-  padding: 10px 60px; /* Giảm padding trên xuống từ 15px thành 10px */
-  margin: 15px auto; /* Giảm margin từ 30px thành 15px */
-  max-width: 1000px;
-  width: 95%;
+  padding: 15px 40px;
+  margin: 8px auto;
+  max-width: 800px;
+  width: 90%;
   text-align: center;
   border: 1px solid rgba(255, 255, 255, 0.2);
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
 }
 
 .message-text {
-  font-size: 1.1rem;
+  font-size: 1rem;
   line-height: 1.6;
-  margin: 10px 0;
   color: white;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-  font-weight: 500;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  margin: 8px 0;
+  animation: messageSlide 0.8s ease forwards;
   opacity: 0;
-  transform: translateY(30px); /* Thêm transform ban đầu */
-  transition: all 1s ease; /* Thay animation thành transition */
-  cursor: pointer;
 }
 
 .message-text.visible {
@@ -167,7 +164,7 @@ body::before {
 }
 
 .cake-container {
-  margin: 70px 0; /* Tăng từ 40px thành 60px để di chuyển xuống */
+  margin: 50px 0 16px 0;
   position: relative;
 }
 
@@ -488,7 +485,7 @@ body::before {
   gap: 20px;
   justify-content: center;
   flex-wrap: wrap;
-  margin-top: -45px; /* Giảm từ -60px thành -45px để không dính bánh */
+  margin-top: 10px;
 }
 
 .birthday-btn {

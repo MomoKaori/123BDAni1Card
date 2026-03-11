@@ -126,14 +126,18 @@ function createBubble() {
   bubble.textContent = emojis[Math.floor(Math.random() * emojis.length)];
   bubble.style.fontSize = size * 0.4 + 'px';
   
-  // Click để nhận quà
-  bubble.addEventListener('click', function() {
+  // Click/Touch để nhận quà
+  const handleBubbleClick = function(e) {
+    e.preventDefault();
     showGift();
     // Hiệu ứng nổ bong bóng
     bubble.style.transform = 'scale(1.5)';
     bubble.style.opacity = '0';
     setTimeout(() => bubble.remove(), 300);
-  });
+  };
+  
+  bubble.addEventListener('click', handleBubbleClick);
+  bubble.addEventListener('touchstart', handleBubbleClick, { passive: false });
   
   container.appendChild(bubble);
   

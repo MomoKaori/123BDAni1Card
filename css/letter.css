@@ -200,7 +200,7 @@ body {
 
   position: absolute;
 
-  bottom: 20px; /* Đẩy xuống phần hồng nhạt */
+  bottom: 10px; /* Đẩy xuống phần hồng nhạt */
 
   left: 50%;
 
@@ -690,7 +690,7 @@ body {
 
 .letter-navigation {
 
-  position: absolute;
+  position: fixed;
 
   bottom: 30px;
 
@@ -702,7 +702,7 @@ body {
 
   gap: 20px;
 
-  z-index: 10;
+  z-index: 100;
 
   display: none; /* Ẩn ban đầu */
 
@@ -1295,6 +1295,24 @@ body {
     font-size: 0.8rem;
 
     padding: 6px 12px;
+
+    bottom: 80px;
+
+  }
+
+  .letter-navigation {
+
+    bottom: 20px;
+
+    gap: 15px;
+
+  }
+
+  .nav-btn {
+
+    padding: 10px 20px;
+
+    font-size: 0.85rem;
 
   }
 
