@@ -1008,22 +1008,7 @@ window.onload = function() {
 
   
 
-  // Toggle navigation arrows visibility (desktop only)
-  let navArrowsVisible = true;
-  const prevBtn = document.getElementById('prevBtn');
-  const nextBtn = document.getElementById('nextBtn');
-  
   document.addEventListener('click', function(e) {
-    // Toggle arrows when clicking on paper area (not on nav buttons or arrows) - desktop only
-    if (window.innerWidth > 768 && e.target.closest('.paper') && !e.target.closest('.page-nav-btn') && !e.target.closest('.nav-btn')) {
-      navArrowsVisible = !navArrowsVisible;
-      if (prevBtn) prevBtn.style.display = navArrowsVisible ? 'flex' : 'none';
-      if (nextBtn) nextBtn.style.display = navArrowsVisible ? 'flex' : 'none';
-      
-      // Don't skip typing when toggling arrows
-      if (!isTyping) return;
-    }
-    
     if (isLetterOpen && isTyping && !e.target.closest('.page-nav-btn') && !e.target.closest('.nav-btn')) {
       skipCurrentLine();
     }
