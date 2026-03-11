@@ -4,91 +4,157 @@ const gifts = [
     icon: '💝',
     title: 'Lời Yêu Thương',
     message: 'Cảm ơn anh đã đến bên em và làm cho thế giới của em trở nên tuyệt vời hơn mỗi ngày. Yêu anh rất nhiều! 💕',
-    image: "https://thetimelessflowers.com/wp-content/uploads/2024/05/z5455767123454_c2e14b45cd244e310f3e46c6fd54bf0c.jpg"
+    image: ""
   },
   {
     icon: '🌟',
     title: 'Ước Ngọt Ngào',
     message: 'Chúc anh mọi điều ước đều thành hiện thực, mọi dự định đều suôn sẻ và luôn có em bên cạnh để chia sẻ. ⭐',
-    image: "https://thetimelessflowers.com/wp-content/uploads/2024/05/z5455767123454_c2e14b45cd244e310f3e46c6fd54bf0c.jpg"
+    image: ""
   },
   {
     icon: '🎂',
     title: 'Bánh Ngọt Tình Yêu',
     message: 'Tình yêu của em dành cho anh ngọt ngào hơn mọi loại bánh, và sẽ còn đậm đà hơn theo năm tháng. 🍰',
-    image: "https://thetimelessflowers.com/wp-content/uploads/2024/05/z5455767123454_c2e14b45cd244e310f3e46c6fd54bf0c.jpg"
+    image: ""
   },
   {
     icon: '🌺',
     title: 'Hoa Tươi Hằng Ngày',
     message: 'Em muốn là đóa hoa luôn tươi đẹp bên anh, mỗi ngày đều mang đến niềm vui và bình yên cho anh. 🌸',
-    image: "https://thetimelessflowers.com/wp-content/uploads/2024/05/z5455767123454_c2e14b45cd244e310f3e46c6fd54bf0c.jpg"
+    image: ""
   },
   {
     icon: '🎵',
     title: 'Nhạc Du Dương',
-    message: 'Tiếng cười của em là bản nhạc hay nhất anh từng nghe, và em sẽ hát bài tình yêu này cho anh mỗi ngày. 🎶',
-    image: "https://thetimelessflowers.com/wp-content/uploads/2024/05/z5455767123454_c2e14b45cd244e310f3e46c6fd54bf0c.jpg"
+    message: 'Tiếng cười của anh là bản nhạc hay nhất em từng nghe. 🎶',
+    image: ""
   },
   {
     icon: '🌈',
     title: 'Cầu Vồng Hạnh Phúc',
     message: 'Cùng nhau chúng ta sẽ vẽ nên bầu trời cầu vồng, với mỗi màu sắc là một kỷ niệm đẹp của tình yêu. 🌈',
-    image: "https://thetimelessflowers.com/wp-content/uploads/2024/05/z5455767123454_c2e14b45cd244e310f3e46c6fd54bf0c.jpg"
+    image: ""
   },
   {
     icon: '💫',
     title: 'Ngôi Sao May Mắn',
     message: 'Em sẽ là ngôi sao sáng nhất dẫn đường cho anh, soi sáng mọi bước chân và luôn ở bên anh. ⭐',
-    image: "https://thetimelessflowers.com/wp-content/uploads/2024/05/z5455767123454_c2e14b45cd244e310f3e46c6fd54bf0c.jpg"
-  },
-  {
-    icon: '🎁',
-    title: 'Quà Vô Giá',
-    message: 'Món quà lớn nhất em có thể trao cho anh chính là trái tim em, đã thuộc về anh từ rất lâu rồi. 💖',
-    image: "" // Không có ảnh
-  },
-  {
-    icon: '🦋',
-    title: 'Bướm Tình Yêu',
-    message: 'Tình yêu của em như con bướm, đã tìm đến hoa của anh và quyết định ở lại mãi mãi. 🦋',
-    image: "" // Không có ảnh
+    image: ""
   },
   {
     icon: '🌙',
     title: 'Ánh Trăng Dịu Dàng',
     message: 'Mỗi đêm em đều nguyện cầu cho anh, giống như ánh trăng dịu dàng luôn che chở và sưởi ấm giấc mơ của anh. 🌙',
-    image: "" // Không có ảnh
+    image: ""
   },
   {
     icon: '🍀',
     title: 'Cỏ May Mạnh Mẽ',
     message: 'Tình yêu của chúng ta may mắn hơn mọi lá cỏ bốn lá, và sẽ bền chặt hơn mọi giông bão. 🍀',
-    image: "" // Không có ảnh
-  },
-  {
-    icon: '🎨',
-    title: 'Bức Tình Yêu',
-    message: 'Cuộc sống của anh là bức tranh tuyệt đẹp, và em rất vinh dự được là một màu sắc trong bức tranh đó. 🎨',
-    image: "" // Không có ảnh
+    image: ""
   },
   {
     icon: '🌊',
     title: 'Biển Cả Tình Yêu',
-    message: 'Tình yêu của em dành cho anh sâu rộng như biển cả, và sẽ luôn là bến đỗ bình yên cho anh. 🌊',
-    image: "" // Không có ảnh
+    message: 'Tình yêu của em dành cho anh sâu rộng như biển cả, luôn là bến đỗ bình yên cho anh. 🌊',
+    image: ""
   },
   {
     icon: '🔥',
     title: 'Lửa Tình Nồng Nàn',
     message: 'Tình yêu của em là ngọn lửa sẽ sưởi ấm trái tim anh, và sẽ không bao giờ lụi tàn. 🔥',
-    image: "" // Không có ảnh
+    image: ""
   },
   {
-    icon: '💎',
-    title: 'Kim Cương Bền Chặt',
-    message: 'Tình yêu của chúng ta quý giá như kim cương, cứng và bền, sẽ sáng mãi theo thời gian. 💎',
-    image: "" // Không có ảnh
+    icon: '💭',
+    title: 'Tiềm Thức Yêu Thương',
+    message: "anh được gọi là tiềm thức,vì tiềm thức là phản xạ tự nhiên, nhớ anh không phải bỗng nhiên,mà là bản năng của tình yêu.",
+    image: ""
+  },
+  {
+    icon: '🐝',
+    title: 'Vị Mật Đầu Tiên',
+    message: "Có một con ong, dù bay qua bao nhiêu cánh đồng, vẫn nhớ mãi vị mật ngọt đầu tiên nó từng nếm từ một bông hoa.\nCó một cô gái, dù đi đến đâu, trong tim vẫn luôn giữ hình bóng của một người…",
+    image: ""
+  },
+  {
+    icon: '🌅',
+    title: 'Niềm Vui Nhỏ',
+    message: "Em mong mỗi ngày của anh đều có thật nhiều niềm vui nhỏ.\nDù là ngày bình thường hay ngày đặc biệt, anh vẫn luôn cảm thấy bình yên và hạnh phúc.",
+    image: ""
+  },
+  {
+    icon: '🌸',
+    title: 'Bông Hoa Tươi',
+    message: "Em mong mỗi ngày của anh đều tươi như những bông hoa này.\nVà nếu có lúc nào anh thấy mệt, thì nhớ là phía sau luôn có em nha.",
+    image: ""
+  },
+  {
+    icon: '🌟',
+    title: 'Bình An Mỗi Ngày',
+    message: "Chúc anh luôn bình an, may mắn và thuận lợi trên mọi con đường.\nVà anh cứ yên tâm bước tiếp, vì phía sau anh lúc nào cũng có em.",
+    image: ""
+  },
+  {
+    icon: '🎀',
+    title: 'Cùng Đi Qua Tất Cả',
+    message: "Mong rằng mỗi ngày của anh đều có niềm vui và những điều tốt đẹp.\nVà nếu có thể, em muốn được ở bên anh thật lâu để cùng đi qua tất cả.",
+    image: ""
+  },
+  {
+    icon: '👑',
+    title: 'Chiếc Áo Vừa Vặn',
+    message: "Đừng cố gắng trở thành một người hoàn hảo trong mắt thiên hạ\nMà hãy trở thành một người hạnh phúc trong mắt chính mình\nBởi\nChiếc áo đẹp nhất là chiếc áo mặc vừa vặn nhất Cuộc đời đẹp nhất là cuộc đời sống vừa ý mình.",
+    image: ""
+  },
+  {
+    icon: '💫',
+    title: 'Vị Trí Không Tranh Giành',
+    message: "vừa là chấp niệm, vừa là giới hạn, vừa là ngoại lệ.\nDù cho có bên nhau hay không. Đời này vẫn cho anh vị trí không phải tranh giành với ai cả",
+    image: ""
+  },
+  {
+    icon: '📊',
+    title: '0% Bất Ổn',
+    message: "Em hi vọng mỗi khi gặp em về, anh sẽ ít đi 1% bất ổn.\nChỉ cần duy trì như thế mỗi ngày thì anh sẽ sớm đạt 0% bất ổn và 100% hạnh phúc",
+    image: ""
+  },
+  {
+    icon: '⚡',
+    title: 'Energy',
+    message: "When something is right for you, it gives you energy. That's how you know.",
+    image: ""
+  },
+  {
+    icon: '📝',
+    title: 'Bằng Lòng',
+    message: "Đặt bao nhiêu tiêu chuẩn\nRồi nó cũng bằng không\nVì từ khi gặp cậu\nTôi vốn đã bằng lòng...",
+    image: ""
+  },
+  {
+    icon: '❤️',
+    title: 'Hạnh Phúc Dành Cho Anh',
+    message: "em có thể tự mình hạnh phúc, em yêu ai cũng sẽ hạnh phúc, chỉ là em muốn dành hạnh phúc đó cho anh",
+    image: ""
+  },
+  {
+    icon: '💕',
+    title: 'Thích Anh',
+    message: "Em thích anh\nVà em cũng thích cà cuộc đời em có anh\nVậy thôi là đù.",
+    image: ""
+  },
+  {
+    icon: '💻',
+    title: 'Code Lỗi Nhớ',
+    message: "Vì cậu, tớ học cách viết code. Để vẽ nên một trái tim không lỗi cú pháp, chỉ lỗi nhớ.",
+    image: ""
+  },
+  {
+    icon: '💰',
+    title: 'Đáng Sống',
+    message: "Tiền làm cho cuộc sống dễ sống hơn.\nNhưng tình yêu làm cho cuộc sống đáng sống.",
+    image: ""
   }
 ];
 
