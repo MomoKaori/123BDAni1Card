@@ -233,12 +233,10 @@ function beginExperience() {
 window.addEventListener('DOMContentLoaded', function() {
   if (sessionStorage.getItem('playIndexMusicOnLoad') === 'true') {
     sessionStorage.removeItem('playIndexMusicOnLoad');
-    // Ẩn start screen, hiện intro
-    document.getElementById("startScreen").style.display = "none";
-    document.getElementById("intro").style.display = "block";
+    // Hiện lại start screen để user bấm lại
+    document.getElementById("startScreen").style.display = "flex";
+    document.getElementById("intro").style.display = "none";
     document.getElementById("passwordScreen").style.display = "none";
-    // Chạy nhạc
-    startMusic();
   }
 });
 

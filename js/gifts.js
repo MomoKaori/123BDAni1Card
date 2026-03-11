@@ -213,6 +213,14 @@ function goBackToBirthday() {
   sessionStorage.setItem('playBirthdayMusicOnLoad', 'true');
 }
 
+function goToAnniversary() {
+  const bgMusic = document.getElementById('bgMusic');
+  if (bgMusic && !bgMusic.paused) {
+    sessionStorage.setItem('musicCurrentTime', bgMusic.currentTime);
+    sessionStorage.setItem('continueMusic', 'true');
+  }
+}
+
 // Bắt đầu khi trang load
 window.addEventListener('load', function() {
   continueMusic();
