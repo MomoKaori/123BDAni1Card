@@ -1272,13 +1272,21 @@ body {
 
     font-size: 1.2rem;
 
+    position: fixed;
+
+    bottom: 30px;
+
+    top: auto;
+
+    transform: none;
+
   }
 
 
 
   .prev-btn {
 
-    left: 5px;
+    left: 10px;
 
   }
 
@@ -1286,7 +1294,7 @@ body {
 
   .next-btn {
 
-    right: 5px;
+    right: 10px;
 
   }
 
@@ -1298,7 +1306,9 @@ body {
 
     padding: 6px 12px;
 
-    bottom: 80px;
+    bottom: 35px;
+
+    position: fixed;
 
   }
 
@@ -1307,6 +1317,8 @@ body {
     bottom: 30px;
 
     gap: 15px;
+
+    position: fixed;
 
   }
 
