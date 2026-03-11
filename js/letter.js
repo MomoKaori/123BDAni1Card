@@ -930,40 +930,27 @@ function updateNavigationButtons() {
 
 }
 
-
-
-
-
-
-
 function checkAllPagesCompleted() {
-
-
-
   const totalLines = linesPerPage.reduce((sum, lines) => sum + lines, 0);
-
-
 
   const navigation = document.querySelector('.letter-navigation');
   if (navigation) {
-    navigation.style.display = 'flex';
+    // Chỉ hiện navigation khi đã hoàn thành tất cả các trang
+    if (letterLineIndex >= totalLines) {
+      navigation.style.display = 'flex';
+    } else {
+      navigation.style.display = 'none';
+    }
   }
-
 }
-
-
-
-
-
-
 
 window.onload = function() {
   const envelope = document.getElementById('envelope');
 
-  // Always show navigation buttons
+  // Hide navigation initially
   const navigation = document.querySelector('.letter-navigation');
   if (navigation) {
-    navigation.style.display = 'flex';
+    navigation.style.display = 'none';
   }
   
   if (envelope) {
@@ -980,7 +967,6 @@ window.onload = function() {
     }
   });
 
-  
   if (sessionStorage.getItem('playLetterMusicOnLoad') === 'true') {
     sessionStorage.removeItem('playLetterMusicOnLoad');
     startLetterMusic();
