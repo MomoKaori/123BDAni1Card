@@ -1008,14 +1008,23 @@ window.onload = function() {
 
   
 
+  // Toggle navigation arrows visibility
+  let navArrowsVisible = true;
+  const prevBtn = document.getElementById('prevBtn');
+  const nextBtn = document.getElementById('nextBtn');
+  
   document.addEventListener('click', function(e) {
-
-    if (isLetterOpen && isTyping && !e.target.closest('.page-nav-btn') && !e.target.closest('.nav-btn')) {
-
-      skipCurrentLine();
-
+    // Toggle arrows when clicking on them
+    if (e.target.closest('.page-nav-btn')) {
+      navArrowsVisible = !navArrowsVisible;
+      if (prevBtn) prevBtn.style.display = navArrowsVisible ? 'flex' : 'none';
+      if (nextBtn) nextBtn.style.display = navArrowsVisible ? 'flex' : 'none';
+      return;
     }
-
+    
+    if (isLetterOpen && isTyping && !e.target.closest('.nav-btn')) {
+      skipCurrentLine();
+    }
   });
 
   

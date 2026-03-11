@@ -1280,8 +1280,6 @@ body {
 
     left: 5px;
 
-    top: 40%;
-
   }
 
 
@@ -1289,8 +1287,6 @@ body {
   .next-btn {
 
     right: 5px;
-
-    top: 40%;
 
   }
 
@@ -1308,7 +1304,7 @@ body {
 
   .letter-navigation {
 
-    bottom: 20px;
+    bottom: 30px;
 
     gap: 15px;
 
