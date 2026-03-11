@@ -1014,15 +1014,17 @@ window.onload = function() {
   const nextBtn = document.getElementById('nextBtn');
   
   document.addEventListener('click', function(e) {
-    // Toggle arrows when clicking on them
-    if (e.target.closest('.page-nav-btn')) {
+    // Toggle arrows when clicking on paper area (not on nav buttons or arrows)
+    if (e.target.closest('.paper') && !e.target.closest('.page-nav-btn') && !e.target.closest('.nav-btn')) {
       navArrowsVisible = !navArrowsVisible;
       if (prevBtn) prevBtn.style.display = navArrowsVisible ? 'flex' : 'none';
       if (nextBtn) nextBtn.style.display = navArrowsVisible ? 'flex' : 'none';
-      return;
+      
+      // Don't skip typing when toggling arrows
+      if (!isTyping) return;
     }
     
-    if (isLetterOpen && isTyping && !e.target.closest('.nav-btn')) {
+    if (isLetterOpen && isTyping && !e.target.closest('.page-nav-btn') && !e.target.closest('.nav-btn')) {
       skipCurrentLine();
     }
   });
