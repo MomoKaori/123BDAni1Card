@@ -6,7 +6,7 @@
 
 body {
   margin: 0;
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -14,8 +14,10 @@ body {
   background-size: 400% 400%;
   animation: giftGradient 15s ease infinite;
   font-family: 'Quicksand', sans-serif;
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: auto;
   position: relative;
+  padding: 20px 10px;
 }
 
 @keyframes giftGradient {
@@ -246,22 +248,41 @@ body {
 /* Responsive */
 @media (max-width: 768px) {
   .gifts-title {
-    font-size: 2.5rem;
+    font-size: 2rem;
   }
   
   .gifts-subtitle {
-    font-size: 1rem;
+    font-size: 0.95rem;
+  }
+  
+  .gifts-container {
+    padding: 15px;
+    width: 100%;
   }
   
   .gift-content {
-    padding: 30px 20px;
+    padding: 25px 15px;
   }
   
   .gift-icon {
-    font-size: 3rem;
+    font-size: 2.5rem;
   }
   
   .gift-title {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
+  }
+  
+  .gift-message {
+    font-size: 0.95rem;
+  }
+  
+  .navigation-buttons {
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+  
+  .nav-btn {
+    padding: 12px 25px;
+    font-size: 0.95rem;
   }
 }

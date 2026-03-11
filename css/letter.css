@@ -18,7 +18,7 @@ body {
 
   margin: 0;
 
-  height: 100vh;
+  min-height: 100vh;
 
   display: flex;
 
@@ -34,7 +34,9 @@ body {
 
   font-family: 'Quicksand', sans-serif;
 
-  overflow: hidden;
+  overflow-x: hidden;
+  
+  padding: 20px 10px;
 
 }
 
@@ -1192,11 +1194,17 @@ body {
 
   .paper {
 
-    width: 90%;
+    width: 95%;
 
-    height: 80%;
+    max-width: 95vw;
 
-    padding: 30px;
+    height: auto;
+
+    min-height: 400px;
+
+    max-height: 85vh;
+
+    padding: 20px 15px;
 
   }
 
@@ -1204,9 +1212,9 @@ body {
 
   .letter-line {
 
-    font-size: 1.1rem !important;
+    font-size: 0.95rem !important;
 
-    line-height: 24px;
+    line-height: 22px;
 
   }
 

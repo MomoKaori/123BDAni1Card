@@ -8,7 +8,7 @@
 
 body {
   margin: 0;
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -16,8 +16,10 @@ body {
   background-size: 400% 400%;
   animation: birthdayGradient 25s ease infinite;
   font-family: 'Quicksand', sans-serif;
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: auto;
   position: relative;
+  padding: 20px 10px;
 }
 
 @keyframes birthdayGradient {
@@ -580,18 +582,49 @@ body::before {
 
 @media (max-width: 768px) {
   .birthday-title {
-    font-size: 3rem;
+    font-size: 2rem;
+    margin-bottom: 15px;
   }
   
   .message-text {
-    font-size: 1.2rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    margin: 8px 0;
   }
   
   .birthday-container {
-    padding: 20px;
+    padding: 15px;
+    width: 100%;
   }
   
   .birthday-message {
-    padding: 30px;
+    padding: 20px 15px;
+    margin: 15px 0;
+  }
+  
+  .cake-container {
+    transform: scale(0.7);
+    margin: 20px 0;
+  }
+  
+  .wish-instruction {
+    font-size: 0.95rem;
+    margin-bottom: 10px;
+  }
+  
+  .wish-btn {
+    padding: 12px 25px;
+    font-size: 1rem;
+  }
+  
+  .birthday-btn {
+    padding: 12px 25px;
+    font-size: 0.95rem;
+    margin: 5px;
+  }
+  
+  .birthday-buttons {
+    gap: 10px;
+    flex-wrap: wrap;
   }
 }

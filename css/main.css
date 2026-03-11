@@ -279,3 +279,51 @@ body::before {
   0%, 100% { transform: translateY(0px); }
   50% { transform: translateY(-20px); }
 }
+
+/* Responsive */
+@media (max-width: 768px) {
+  #intro {
+    padding: 20px 15px;
+    max-width: 95%;
+    margin: 15px;
+  }
+  
+  .intro-text {
+    font-size: 1.1rem;
+    line-height: 1.6;
+  }
+  
+  .password-container {
+    padding: 30px 20px;
+    max-width: 95%;
+    margin: 15px;
+  }
+  
+  .password-container h2 {
+    font-size: 1.5rem;
+  }
+  
+  .password-container input {
+    font-size: 1rem;
+    padding: 12px;
+  }
+  
+  .password-container button {
+    padding: 12px 30px;
+    font-size: 1rem;
+  }
+  
+  .start-screen {
+    padding: 20px;
+  }
+  
+  #beginBtn {
+    padding: 15px 35px;
+    font-size: 1.1rem;
+  }
+  
+  .start-warning {
+    font-size: 0.85rem;
+    max-width: 90%;
+  }
+}
